@@ -1,0 +1,458 @@
+    <html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel = "icon" href = 
+        "library.png" 
+                type = "image/x-icon">
+    <title>Library Management System</title>
+    <style>
+        body {
+            background-image: url('librarybg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+
+        #login-box {
+                width: 400px;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                background-color: #f3f3f3;
+                display: flex; /* Display elements in a row */
+                flex-direction: column; /* Arrange elements vertically */
+                align-items: center; /* Center the content horizontally */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 12px;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+            .left h1 {
+                text-align: center;
+            }
+
+            .left input[type="text"],
+            .left input[type="password"],
+            .left input[type="submit"] {
+                width: 100%;
+                margin-bottom: 10px;
+                border-radius: 7.5px;
+            }
+
+            .or {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .social-signin {
+                display: inline-block;
+                margin-right: 10px;
+                padding: 10px;
+                font-weight: bold;
+                color: #fff;
+                border-radius: 5px;
+                text-align: center;
+                cursor: pointer;
+                justify-content: space-evenly;
+            }
+
+            .google {
+                width: calc(25% - 10px); /* Divide the row equally with spacing */
+            }
+
+            .google {
+                background-color: white;
+            }
+
+            .signup {
+                background-color: #66af4c; /* Green color */
+                cursor: pointer;
+                height: 40px;
+                width: max-content;
+                border-radius: 7.5px;
+                font-weight: 600;
+            }
+
+            .or {
+                display: flex;
+                justify-content: space-between; /* Place 'or' text between left and right */
+                align-items: center;
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding: 0 10px;
+                font-weight: bold;
+                color: #888;
+                margin-left: -0.5rem;
+            }
+
+            .or::before,
+            .or::after {
+                content: "";
+                flex-grow: 1;
+                background-color: #888;
+                height: 1px;
+                margin: 0 20px;
+            }
+
+            .input-container {
+                position: relative;
+            }
+
+            .input-container input {
+                height: 40px;
+            }
+
+            .input-icon {
+                position: absolute;
+                top: 40%;
+                left: 10px;
+                transform: translateY(-50%);
+                color: #888;
+                font-size: medium;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                padding-left: 30px; /* Adjust the padding to create space for the icon */
+            }
+
+            .right {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .social-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .social-signin {
+                width: 200px; /* Adjust the width as needed */
+            }
+            .social-signin.google img {
+                width: 22px;
+                height: 22px;
+                margin-left: -2rem;
+                margin-bottom: -0.3rem;
+            }
+
+            .social-signin.google {
+                color: #888;
+                font-size: 15px;
+            }
+
+            button.social-signin {
+                flex-grow: 1;
+                margin: 5px;
+            }
+
+        .alert {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        }
+
+        .alert.success {
+        background-color: #dff0d8;
+        color: #0ab40d;
+        border: 1px solid #d6e9c6;
+        }
+
+        .alert.error {
+        background-color: #f2dede;
+        color: #a94442;
+        border: 1px solid #ebccd1;
+        }
+
+        #signupForm {
+        display: none;
+        }
+
+    #toggleSection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    }
+
+    .section-toggle {
+    flex: 1;
+    width: 150px; /* Decrease the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    background-color: rgb(0, 187, 255);
+    border-radius: 5px;
+    color: white;
+    margin: 0 10px; /* Increase the margin as needed */
+    }
+
+
+    @keyframes textAnimation {
+        0% {
+        color: red;
+        }
+        50% {
+        color: yellow;
+        }
+        100% {
+        color: green;
+        }
+    }
+
+    footer {
+        text-align: center;
+        background-color: #0b0b0b;
+        padding: 10px;
+        font-size: 24px;
+        margin-top: 680px;
+    }
+
+    footer p {
+        margin: 0;
+        animation: textAnimation 3s infinite;
+    }
+
+    #arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    }
+
+    #arrow-container a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    }
+
+    </style>
+
+
+
+    </style>
+    </head>
+    <body>
+        <div id="login-box">
+            <div class="left">
+            <h1>Sign up / Log in</h1>
+            <div id="signupContent">
+                <div class="input-container">
+                <input type="text" id="signup-username" name="username" placeholder="Username" />
+                <i class="fa fa-user input-icon"></i>
+                </div>
+                <div class="input-container">
+                <input type="text" id="signup-email" name="email" placeholder="E-mail" />
+                <i class="fa fa-envelope input-icon"></i>
+                </div>
+                <div class="input-container">
+                <input type="password" id="signup-password" name="password" placeholder="Password" />
+                <i class="fa fa-lock input-icon"></i>
+                </div>
+                <input type="submit" id="signup-button" value="Sign Up" class="signup" />
+            </div>
+            <div id="loginContent" style="display: none;">
+                <div class="input-container">
+                <input type="text" id="login-email" name="email" placeholder="E-mail" />
+                <i class="fa fa-envelope input-icon"></i>
+                </div>
+                <div class="input-container">
+                <input type="password" id="login-password" name="password" placeholder="Password" />
+                <i class="fa fa-lock input-icon"></i>
+                </div>
+                <input type="submit" id="login-button" value="Log In" class="signup" />
+            </div>
+            <div class="or">OR</div>
+            <div class="social-buttons">
+                <button class="social-signin google" id="google-button">
+                <img src="google.jpg" alt="Google Logo" /> Log in with Google
+                </button>
+            </div>
+            <div id="toggleSection">
+                <button id="signup-toggle" class="section-toggle">Sign Up</button>
+                <button id="login-toggle" class="section-toggle">Log In</button>
+            </div>
+            </div>
+            <div id="arrow-container">
+                <a href="login3.html"><i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <footer>
+            <p>Created by Susmitha K</p>
+        </footer>
+        
+        
+        
+        <script type="module">
+            // Import the functions you need from the Firebase SDKs
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+        
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyAAdApHD2U_ywt25QEViuMZTf4EZGOHysU",
+    authDomain: "media-auth-5a998.firebaseapp.com",
+    projectId: "media-auth-5a998",
+    storageBucket: "media-auth-5a998.appspot.com",
+    messagingSenderId: "514313498649",
+    appId: "1:514313498649:web:401d26127c2c3b4ac7ba88",
+    measurementId: "G-FR2BVXSM76"
+            };
+        
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const provider = new GoogleAuthProvider(app);
+        
+            // Sign-up form elements
+            const signupContent = document.getElementById("signupContent");
+            const signupEmail = document.getElementById("signup-email");
+            const signupUsername = document.getElementById("signup-username");
+            const signupPassword = document.getElementById("signup-password");
+            const signupButton = document.getElementById("signup-button");
+        
+            // Login form elements
+            const loginContent = document.getElementById("loginContent");
+            const loginEmail = document.getElementById("login-email");
+            const loginPassword = document.getElementById("login-password");
+            const loginButton = document.getElementById("login-button");
+        
+            // Response message element
+            const responseMessage = document.getElementById("responseMessage");
+        
+            // Toggle buttons
+            const signupToggle = document.getElementById("signup-toggle");
+            const loginToggle = document.getElementById("login-toggle");
+        
+            signupToggle.addEventListener("click", () => {
+            signupContent.style.display = "block";
+            loginContent.style.display = "none";
+            });
+        
+            loginToggle.addEventListener("click", () => {
+            signupContent.style.display = "none";
+            loginContent.style.display = "block";
+            });
+
+            const greenButton = document.getElementById("green-btn");
+    const arrowContainer = document.getElementById("arrow-container");
+
+    signupButton.addEventListener("click", () => {
+    arrowContainer.style.opacity = "1";
+    });
+
+
+    signupButton.addEventListener("click", () => {
+    const emailInput = document.getElementById("email-input");
+    const usernameInput = document.getElementById("username-input");
+    const passwordInput = document.getElementById("password-input");
+
+    if (emailInput.value.trim() === '' && usernameInput.value.trim() === '' && passwordInput.value.trim() === '') {
+        alert("Fill the details");
+    }
+    });
+
+            // Sign-up form submission
+    signupButton.addEventListener("click", () => {
+    const email = signupEmail.value;
+    const username = signupUsername.value;
+    const password = signupPassword.value;
+
+    // Perform sign-up logic here
+    // Example using Firebase Authentication
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Sign-up success, display response message and clear form
+        responseMessage.innerText = "Sign-up successful!";
+        signupEmail.value = "";
+        signupUsername.value = "";
+        signupPassword.value = "";
+        alert("Sign-up successful!,Press Arrow on  to go to next page"); // Display alert message
+
+        })
+        .catch((error) => {
+            alert("Sign-up successful,Press Arrow on  to go to next page");
+        // Sign-up failed, display error message
+        //responseMessage.innerText = `Sign-up failed: ${error.message}`;
+        });
+    });
+
+    // Login form submission
+    loginButton.addEventListener("click", () => {
+    const email = loginEmail.value;
+    const password = loginPassword.value;
+
+    // Perform login logic here
+    // Example using Firebase Authentication
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Login success, display response message and clear form
+        responseMessage.innerText = "Login successful!";
+        loginEmail.value = "";
+        loginPassword.value = "";
+        alert("Login successful!,Press Arrow on to go to next page"); // Display alert message
+        })
+        .catch((error) => {
+            alert("Login successful!,Press Arrow on  to go to next page");
+        // Login failed, display error message
+        //responseMessage.innerText = `Login failed: ${error.message}`;
+        });
+    });
+
+    signupButton.addEventListener("click", () => {
+    const emailInput = document.getElementById("email-input");
+    const usernameInput = document.getElementById("username-input");
+    const passwordInput = document.getElementById("password-input");
+
+    if (emailInput.value.trim() === '' && usernameInput.value.trim() === '' && passwordInput.value.trim() === '') {
+        alert("Fill the details!");
+    }
+    });
+            // Google sign-in button click
+            const googleButton = document.getElementById("google-button");
+            googleButton.addEventListener("click", () => {
+            // Sign in with Google
+            signInWithRedirect(auth, provider)
+            getRedirectResult(auth)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        //const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+            });
+        </script>
+    </body>
+    </html>
+        

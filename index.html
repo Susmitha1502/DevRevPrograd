@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Search</title>
+</head>
+<body>
+  <div class="container">
+    <div class="searchContainer">
+        <input id="searchInput" type="text" placeholder="Search for books...">
+        <button id="searchButton">Search</button>
+    </div>
+    <ul id="suggestions"></ul>
+  </div>
+  <div id="loadingAnimation" class="loader"></div>
+  <div class="filter-container">
+    <label for="filterSelect">Filter:</label>
+    <select id="filterSelect">
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+      <option value="subject">Subject</option>
+      <option value="publish-date">Publish Date</option>
+    </select>
+  </div>
+  
+  <div class="sort-container">
+    <label for="sortSelect">Sort:</label>
+    <select id="sortSelect">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+  <div id="bookCount"></div>
+  <div id="output"></div>
+
+  <button id="cartButton" class="cart-button">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="cartButtonCount" class="cart-button-count">0</span>
+  </button>
+  <div class="button-container">
+  <button id="cartDetailsButton">Show Cart</button>
+  </div>
+<div id="cartItems"></div>
+
+  <script src="script.js">  </script>
+  </body>
+</html>
